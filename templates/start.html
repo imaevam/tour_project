@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="jumbotron text-center mt-4" style="background: url('https://i2.wp.com/www.travindy.com/wp-content/uploads/2020/07/file-20200701-54162-1vqr1yb.jpg?fit=1356%2C668&ssl=1'); background-position: center center;">
+    <h1 class="display-4" >Всякие туры</h1>
+    <p class="lead">Для тех, кого отвлекают дома</p>
+    <p class="mt-5 w-50 mx-auto">Лучшие направления, где никто не будет вам мешать сидеть на берегу и изучать программирование, дизайн, разработку игр и управление продуктами</p>
+    <link rel="stylesheet" href="style.css">
+</section>
+<!-- CARDS -->
+<p class="mb-4">Найдено {{ length }} туров, от {{ prices[0] }} до {{ prices[-1] }} и от {{ nights[0] }} ночей до {{ nights[-1] }} ночей</p>
+<div class="row mt-5">
+    {% for city_list in tours.values() %}
+        {% for info in city_list[:1] %}
+    <div class="col-4">
+    <div class="card mb-4">
+        <img src="{{ info['picture'] }}" class="card-img-top img-fluid" alt="">
+        <div class="card-body">
+        <h2 class="h5 card-title">{{ info['title'] }}</h2>
+        <p class="card-text">{{ info['description'][:140] }}...</p>
+        <a href="{{ url_for('render_tours', tour_id=info['id']) }}" class="btn btn-sm btn-primary">Подробнее</a>
+        </div>
+    </div>
+    </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="mt-3 pb-5">
+      {% for all in tours.values() %}
+        {% for one in all %}
+          {% if one['id'] == tour_id %}
+      <h1 class="display-3 mt-4">{{ one['title'] }} {{ '★' * one['stars']|int}}</h1>
+      <!-- HERO -->
+      <p class="lead">{{ one['country'] }} из {{ departures[one['departure']][3:] }} {{ one['nights'] }} ночей</p>
+      <img src="{{ one['picture'] }}" class="w-75" alt="">
+      <p class="my-4 w-75">{{ one['description'] }}</p>
+      <a href="#" class="btn btn-success btn-lg">Купить тур за {{ one['price'] }}</a>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </section>
+{% endblock %}
