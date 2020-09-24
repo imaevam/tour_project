@@ -17,5 +17,4 @@ pip install -r requirments.txt
 Чтобы запустить веб-приложение, выполните в консоли:
 
 
-```  python3 app.py 
-```
+```  python3 app.py  ```
