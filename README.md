@@ -9,11 +9,14 @@ Tour_project - это макет сайта тур-оператора для п�
 
 Выполните в консоли:
 
-git clone https://github.com/imaevam/tour_project.git
-pip install -r requirments.txt
+''' git clone https://github.com/imaevam/tour_project.git
+pip install -r requirments.txt 
+'''
 
 ## Запуск
 Чтобы запустить веб-приложение, выполните в консоли:
 
+'''
 python3 app.py
+'''
 
